@@ -1,0 +1,2006 @@
+Microsoft Windows [Version 10.0.19045.5011]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\IET>mysql --host=192.168.10.150 --port=3306 --user=dac22 --password=welcome
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 257
+Server version: 8.1.0 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| dac22              |
+| information_schema |
+| performance_schema |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql> use dac22;
+Database changed
+mysql> show tables;
++------------------------+
+| Tables_in_dac22        |
++------------------------+
+| a                      |
+| agent                  |
+| andor                  |
+| b                      |
+| batch_students         |
+| blanktablea            |
+| blanktableb            |
+| blog                   |
+| bonus                  |
+| books                  |
+| candidate              |
+| client                 |
+| coalesce               |
+| comments               |
+| company                |
+| course                 |
+| course_batches         |
+| course_modules         |
+| customer               |
+| customers              |
+| demodept1              |
+| demodept2              |
+| dept                   |
+| dept1                  |
+| docs                   |
+| doctor                 |
+| doctorvisits           |
+| dummy                  |
+| duplicate              |
+| emp                    |
+| emp1                   |
+| emp2                   |
+| emp_attendance         |
+| emp_cards              |
+| emp_phone              |
+| empj                   |
+| envelope               |
+| faculty                |
+| faculty_address        |
+| faculty_phone          |
+| faculty_qualifications |
+| food                   |
+| fullname               |
+| hobby                  |
+| item                   |
+| job_list               |
+| key_parts              |
+| labtestlist            |
+| leadtable              |
+| licence                |
+| location               |
+| mass_table             |
+| medicinelist           |
+| menucard               |
+| modules                |
+| nearest                |
+| new                    |
+| newbooks               |
+| nullif                 |
+| numbers                |
+| numberstring           |
+| ord                    |
+| orderdetails           |
+| orders                 |
+| overtime               |
+| patient                |
+| phonecall              |
+| pivot_table            |
+| plumber                |
+| plumber_service_map    |
+| points                 |
+| price                  |
+| product                |
+| product_sales          |
+| products               |
+| quarterly_revenue      |
+| r                      |
+| r1                     |
+| r2                     |
+| races                  |
+| regexpr                |
+| replacedept            |
+| revenue                |
+| rockets                |
+| runners                |
+| runningserver          |
+| sales                  |
+| sales_channel          |
+| salespeople            |
+| salesperson            |
+| salgrade               |
+| server                 |
+| service                |
+| seta                   |
+| setb                   |
+| shop                   |
+| softdrink              |
+| sort                   |
+| sourcenames            |
+| stadium                |
+| states                 |
+| station                |
+| status                 |
+| stringnumber           |
+| student                |
+| student_address        |
+| student_cards          |
+| student_order          |
+| student_phone          |
+| student_qualifications |
+| student_qulification   |
+| t11_10                 |
+| tablea                 |
+| tableaa                |
+| tableb                 |
+| tablebb                |
+| targetnames            |
+| tasks                  |
+| temp1                  |
+| traintimetable         |
+| transactions           |
+| vote_response          |
+| votes                  |
+| warehouse              |
+| yearly_revenue         |
+| z                      |
++------------------------+
+126 rows in set (0.01 sec)
+
+mysql> select * from student;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com     |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 11 | neel      | save     | 1975-10-30 | neel.save@gmail.com      |
+| 12 | deep      | save     | 1986-11-30 | deep.save@gmail.com      |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+| 18 | rahul     | shah     | 1982-06-12 | rahul.shah@gmail.com     |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
++----+-----------+----------+------------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst ,substr(namefirst,3) from student;
++-----------+---------------------+
+| namefirst | substr(namefirst,3) |
++-----------+---------------------+
+| saleel    | leel                |
+| omkar     | kar                 |
+| ulka      | ka                  |
+| rahul     | hul                 |
+| ruhan     | han                 |
+| lala      | la                  |
+| sharmin   | armin               |
+| vrushali  | ushali              |
+| vasant    | sant                |
+| nitish    | tish                |
+| neel      | el                  |
+| deep      | ep                  |
+| nrupali   | upali               |
+| supriya   | priya               |
+| bandish   | ndish               |
+| sangita   | ngita               |
+| sangita   | ngita               |
+| rahul     | hul                 |
+| bhavin    | avin                |
+| kaushal   | ushal               |
+| pankaj    | nkaj                |
+| rajan     | jan                 |
+| bhavin    | avin                |
+| mukesh    | kesh                |
+| dilu      | lu                  |
+| sonam     | nam                 |
+| rohit     | hit                 |
+| raj       | j                   |
++-----------+---------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst ,substr(namefirst,3,length(namefirst)) from student;
++-----------+---------------------------------------+
+| namefirst | substr(namefirst,3,length(namefirst)) |
++-----------+---------------------------------------+
+| saleel    | leel                                  |
+| omkar     | kar                                   |
+| ulka      | ka                                    |
+| rahul     | hul                                   |
+| ruhan     | han                                   |
+| lala      | la                                    |
+| sharmin   | armin                                 |
+| vrushali  | ushali                                |
+| vasant    | sant                                  |
+| nitish    | tish                                  |
+| neel      | el                                    |
+| deep      | ep                                    |
+| nrupali   | upali                                 |
+| supriya   | priya                                 |
+| bandish   | ndish                                 |
+| sangita   | ngita                                 |
+| sangita   | ngita                                 |
+| rahul     | hul                                   |
+| bhavin    | avin                                  |
+| kaushal   | ushal                                 |
+| pankaj    | nkaj                                  |
+| rajan     | jan                                   |
+| bhavin    | avin                                  |
+| mukesh    | kesh                                  |
+| dilu      | lu                                    |
+| sonam     | nam                                   |
+| rohit     | hit                                   |
+| raj       | j                                     |
++-----------+---------------------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst ,substr(namefirst,3,3) from student;
++-----------+-----------------------+
+| namefirst | substr(namefirst,3,3) |
++-----------+-----------------------+
+| saleel    | lee                   |
+| omkar     | kar                   |
+| ulka      | ka                    |
+| rahul     | hul                   |
+| ruhan     | han                   |
+| lala      | la                    |
+| sharmin   | arm                   |
+| vrushali  | ush                   |
+| vasant    | san                   |
+| nitish    | tis                   |
+| neel      | el                    |
+| deep      | ep                    |
+| nrupali   | upa                   |
+| supriya   | pri                   |
+| bandish   | ndi                   |
+| sangita   | ngi                   |
+| sangita   | ngi                   |
+| rahul     | hul                   |
+| bhavin    | avi                   |
+| kaushal   | ush                   |
+| pankaj    | nka                   |
+| rajan     | jan                   |
+| bhavin    | avi                   |
+| mukesh    | kes                   |
+| dilu      | lu                    |
+| sonam     | nam                   |
+| rohit     | hit                   |
+| raj       | j                     |
++-----------+-----------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst ,substr(namefirst,3,1) from student;
++-----------+-----------------------+
+| namefirst | substr(namefirst,3,1) |
++-----------+-----------------------+
+| saleel    | l                     |
+| omkar     | k                     |
+| ulka      | k                     |
+| rahul     | h                     |
+| ruhan     | h                     |
+| lala      | l                     |
+| sharmin   | a                     |
+| vrushali  | u                     |
+| vasant    | s                     |
+| nitish    | t                     |
+| neel      | e                     |
+| deep      | e                     |
+| nrupali   | u                     |
+| supriya   | p                     |
+| bandish   | n                     |
+| sangita   | n                     |
+| sangita   | n                     |
+| rahul     | h                     |
+| bhavin    | a                     |
+| kaushal   | u                     |
+| pankaj    | n                     |
+| rajan     | j                     |
+| bhavin    | a                     |
+| mukesh    | k                     |
+| dilu      | l                     |
+| sonam     | n                     |
+| rohit     | h                     |
+| raj       | j                     |
++-----------+-----------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst ,ascii(substr(namefirst,3,1)) from student;
++-----------+------------------------------+
+| namefirst | ascii(substr(namefirst,3,1)) |
++-----------+------------------------------+
+| saleel    |                          108 |
+| omkar     |                          107 |
+| ulka      |                          107 |
+| rahul     |                          104 |
+| ruhan     |                          104 |
+| lala      |                          108 |
+| sharmin   |                           97 |
+| vrushali  |                          117 |
+| vasant    |                          115 |
+| nitish    |                          116 |
+| neel      |                          101 |
+| deep      |                          101 |
+| nrupali   |                          117 |
+| supriya   |                          112 |
+| bandish   |                          110 |
+| sangita   |                          110 |
+| sangita   |                          110 |
+| rahul     |                          104 |
+| bhavin    |                           97 |
+| kaushal   |                          117 |
+| pankaj    |                          110 |
+| rajan     |                          106 |
+| bhavin    |                           97 |
+| mukesh    |                          107 |
+| dilu      |                          108 |
+| sonam     |                          110 |
+| rohit     |                          104 |
+| raj       |                          106 |
++-----------+------------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,namelast from student;
++-----------+----------+
+| namefirst | namelast |
++-----------+----------+
+| saleel    | bagde    |
+| omkar     | rakde    |
+| ulka      | joshi    |
+| rahul     | patil    |
+| ruhan     | bagde    |
+| lala      | prasad   |
+| sharmin   | bagde    |
+| vrushali  | bagde    |
+| vasant    | khande   |
+| nitish    | patil    |
+| neel      | save     |
+| deep      | save     |
+| nrupali   | save     |
+| supriya   | karnik   |
+| bandish   | karnik   |
+| sangita   | karnik   |
+| sangita   | menon    |
+| rahul     | shah     |
+| bhavin    | patel    |
+| kaushal   | patil    |
+| pankaj    | gandhi   |
+| rajan     | patel    |
+| bhavin    | desai    |
+| mukesh    | bhavsar  |
+| dilu      | khande   |
+| sonam     | khan     |
+| rohit     | patil    |
+| raj       | bubber   |
++-----------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select Lower(namefirst),Lower(namelast) from student;
++------------------+-----------------+
+| Lower(namefirst) | Lower(namelast) |
++------------------+-----------------+
+| saleel           | bagde           |
+| omkar            | rakde           |
+| ulka             | joshi           |
+| rahul            | patil           |
+| ruhan            | bagde           |
+| lala             | prasad          |
+| sharmin          | bagde           |
+| vrushali         | bagde           |
+| vasant           | khande          |
+| nitish           | patil           |
+| neel             | save            |
+| deep             | save            |
+| nrupali          | save            |
+| supriya          | karnik          |
+| bandish          | karnik          |
+| sangita          | karnik          |
+| sangita          | menon           |
+| rahul            | shah            |
+| bhavin           | patel           |
+| kaushal          | patil           |
+| pankaj           | gandhi          |
+| rajan            | patel           |
+| bhavin           | desai           |
+| mukesh           | bhavsar         |
+| dilu             | khande          |
+| sonam            | khan            |
+| rohit            | patil           |
+| raj              | bubber          |
++------------------+-----------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,namelast,emailid from student;
++-----------+----------+--------------------------+
+| namefirst | namelast | emailid                  |
++-----------+----------+--------------------------+
+| saleel    | bagde    | saleel.bagde@gmail.com   |
+| omkar     | rakde    | omkar.rakde@gmail.com    |
+| ulka      | joshi    | ulka.joshi@gmail.com     |
+| rahul     | patil    | rahul.patil@gmail.com    |
+| ruhan     | bagde    | ruhan.bagde@gmail.com    |
+| lala      | prasad   | lala.prasad@gmail.com    |
+| sharmin   | bagde    | sharmin.bagde@gmail.com  |
+| vrushali  | bagde    | vrushali.bagde@gmail.com |
+| vasant    | khande   | vasant.khande@gmail.com  |
+| nitish    | patil    | nitish.patil@gmail.com   |
+| neel      | save     | neel.save@gmail.com      |
+| deep      | save     | deep.save@gmail.com      |
+| nrupali   | save     | nrupali.save@gmail.com   |
+| supriya   | karnik   | supriya.karnik@gmail.com |
+| bandish   | karnik   | bandish.karnik@gmail.com |
+| sangita   | karnik   | sangita.karnik@gmail.com |
+| sangita   | menon    | sangita.menon@gmail.com  |
+| rahul     | shah     | rahul.shah@gmail.com     |
+| bhavin    | patel    | bhavin.patel@gmail.com   |
+| kaushal   | patil    | kaushal.patil@gmail.com  |
+| pankaj    | gandhi   | pankaj.gandhi@gmail.com  |
+| rajan     | patel    | rajan.patel@gmail.com    |
+| bhavin    | desai    | bhavin.desai@gmail.com   |
+| mukesh    | bhavsar  | mukesh.bhavsar@gmail.com |
+| dilu      | khande   | dilu.khande@gmail.com    |
+| sonam     | khan     | sonam.khan@gmail.com     |
+| rohit     | patil    | rohit.patil@gmail.com    |
+| raj       | bubber   | raj.bubber@gmail.com     |
++-----------+----------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,namelast,substring(emailid,7) from student;
++-----------+----------+----------------------+
+| namefirst | namelast | substring(emailid,7) |
++-----------+----------+----------------------+
+| saleel    | bagde    | .bagde@gmail.com     |
+| omkar     | rakde    | rakde@gmail.com      |
+| ulka      | joshi    | oshi@gmail.com       |
+| rahul     | patil    | patil@gmail.com      |
+| ruhan     | bagde    | bagde@gmail.com      |
+| lala      | prasad   | rasad@gmail.com      |
+| sharmin   | bagde    | n.bagde@gmail.com    |
+| vrushali  | bagde    | li.bagde@gmail.com   |
+| vasant    | khande   | .khande@gmail.com    |
+| nitish    | patil    | .patil@gmail.com     |
+| neel      | save     | ave@gmail.com        |
+| deep      | save     | ave@gmail.com        |
+| nrupali   | save     | i.save@gmail.com     |
+| supriya   | karnik   | a.karnik@gmail.com   |
+| bandish   | karnik   | h.karnik@gmail.com   |
+| sangita   | karnik   | a.karnik@gmail.com   |
+| sangita   | menon    | a.menon@gmail.com    |
+| rahul     | shah     | shah@gmail.com       |
+| bhavin    | patel    | .patel@gmail.com     |
+| kaushal   | patil    | l.patil@gmail.com    |
+| pankaj    | gandhi   | .gandhi@gmail.com    |
+| rajan     | patel    | patel@gmail.com      |
+| bhavin    | desai    | .desai@gmail.com     |
+| mukesh    | bhavsar  | .bhavsar@gmail.com   |
+| dilu      | khande   | hande@gmail.com      |
+| sonam     | khan     | khan@gmail.com       |
+| rohit     | patil    | patil@gmail.com      |
+| raj       | bubber   | bber@gmail.com       |
++-----------+----------+----------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,namelast,substring(emailid,1,7) from student;
++-----------+----------+------------------------+
+| namefirst | namelast | substring(emailid,1,7) |
++-----------+----------+------------------------+
+| saleel    | bagde    | saleel.                |
+| omkar     | rakde    | omkar.r                |
+| ulka      | joshi    | ulka.jo                |
+| rahul     | patil    | rahul.p                |
+| ruhan     | bagde    | ruhan.b                |
+| lala      | prasad   | lala.pr                |
+| sharmin   | bagde    | sharmin                |
+| vrushali  | bagde    | vrushal                |
+| vasant    | khande   | vasant.                |
+| nitish    | patil    | nitish.                |
+| neel      | save     | neel.sa                |
+| deep      | save     | deep.sa                |
+| nrupali   | save     | nrupali                |
+| supriya   | karnik   | supriya                |
+| bandish   | karnik   | bandish                |
+| sangita   | karnik   | sangita                |
+| sangita   | menon    | sangita                |
+| rahul     | shah     | rahul.s                |
+| bhavin    | patel    | bhavin.                |
+| kaushal   | patil    | kaushal                |
+| pankaj    | gandhi   | pankaj.                |
+| rajan     | patel    | rajan.p                |
+| bhavin    | desai    | bhavin.                |
+| mukesh    | bhavsar  | mukesh.                |
+| dilu      | khande   | dilu.kh                |
+| sonam     | khan     | sonam.k                |
+| rohit     | patil    | rohit.p                |
+| raj       | bubber   | raj.bub                |
++-----------+----------+------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,namelast,emailid from student where length(emailid)>15;
++-----------+----------+--------------------------+
+| namefirst | namelast | emailid                  |
++-----------+----------+--------------------------+
+| saleel    | bagde    | saleel.bagde@gmail.com   |
+| omkar     | rakde    | omkar.rakde@gmail.com    |
+| ulka      | joshi    | ulka.joshi@gmail.com     |
+| rahul     | patil    | rahul.patil@gmail.com    |
+| ruhan     | bagde    | ruhan.bagde@gmail.com    |
+| lala      | prasad   | lala.prasad@gmail.com    |
+| sharmin   | bagde    | sharmin.bagde@gmail.com  |
+| vrushali  | bagde    | vrushali.bagde@gmail.com |
+| vasant    | khande   | vasant.khande@gmail.com  |
+| nitish    | patil    | nitish.patil@gmail.com   |
+| neel      | save     | neel.save@gmail.com      |
+| deep      | save     | deep.save@gmail.com      |
+| nrupali   | save     | nrupali.save@gmail.com   |
+| supriya   | karnik   | supriya.karnik@gmail.com |
+| bandish   | karnik   | bandish.karnik@gmail.com |
+| sangita   | karnik   | sangita.karnik@gmail.com |
+| sangita   | menon    | sangita.menon@gmail.com  |
+| rahul     | shah     | rahul.shah@gmail.com     |
+| bhavin    | patel    | bhavin.patel@gmail.com   |
+| kaushal   | patil    | kaushal.patil@gmail.com  |
+| pankaj    | gandhi   | pankaj.gandhi@gmail.com  |
+| rajan     | patel    | rajan.patel@gmail.com    |
+| bhavin    | desai    | bhavin.desai@gmail.com   |
+| mukesh    | bhavsar  | mukesh.bhavsar@gmail.com |
+| dilu      | khande   | dilu.khande@gmail.com    |
+| sonam     | khan     | sonam.khan@gmail.com     |
+| rohit     | patil    | rohit.patil@gmail.com    |
+| raj       | bubber   | raj.bubber@gmail.com     |
++-----------+----------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,namelast,emailid from student where length(emailid)<15;
+Empty set (0.00 sec)
+
+mysql> select namefirst,namelast,emailid from student where length(emailid)<7;
+Empty set (0.00 sec)
+
+mysql> select namefirst,namelast,emailid from student where length(emailid)>7;
++-----------+----------+--------------------------+
+| namefirst | namelast | emailid                  |
++-----------+----------+--------------------------+
+| saleel    | bagde    | saleel.bagde@gmail.com   |
+| omkar     | rakde    | omkar.rakde@gmail.com    |
+| ulka      | joshi    | ulka.joshi@gmail.com     |
+| rahul     | patil    | rahul.patil@gmail.com    |
+| ruhan     | bagde    | ruhan.bagde@gmail.com    |
+| lala      | prasad   | lala.prasad@gmail.com    |
+| sharmin   | bagde    | sharmin.bagde@gmail.com  |
+| vrushali  | bagde    | vrushali.bagde@gmail.com |
+| vasant    | khande   | vasant.khande@gmail.com  |
+| nitish    | patil    | nitish.patil@gmail.com   |
+| neel      | save     | neel.save@gmail.com      |
+| deep      | save     | deep.save@gmail.com      |
+| nrupali   | save     | nrupali.save@gmail.com   |
+| supriya   | karnik   | supriya.karnik@gmail.com |
+| bandish   | karnik   | bandish.karnik@gmail.com |
+| sangita   | karnik   | sangita.karnik@gmail.com |
+| sangita   | menon    | sangita.menon@gmail.com  |
+| rahul     | shah     | rahul.shah@gmail.com     |
+| bhavin    | patel    | bhavin.patel@gmail.com   |
+| kaushal   | patil    | kaushal.patil@gmail.com  |
+| pankaj    | gandhi   | pankaj.gandhi@gmail.com  |
+| rajan     | patel    | rajan.patel@gmail.com    |
+| bhavin    | desai    | bhavin.desai@gmail.com   |
+| mukesh    | bhavsar  | mukesh.bhavsar@gmail.com |
+| dilu      | khande   | dilu.khande@gmail.com    |
+| sonam     | khan     | sonam.khan@gmail.com     |
+| rohit     | patil    | rohit.patil@gmail.com    |
+| raj       | bubber   | raj.bubber@gmail.com     |
++-----------+----------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,namelast,emailid from student where length(emailid)>20;
++-----------+----------+--------------------------+
+| namefirst | namelast | emailid                  |
++-----------+----------+--------------------------+
+| saleel    | bagde    | saleel.bagde@gmail.com   |
+| omkar     | rakde    | omkar.rakde@gmail.com    |
+| rahul     | patil    | rahul.patil@gmail.com    |
+| ruhan     | bagde    | ruhan.bagde@gmail.com    |
+| lala      | prasad   | lala.prasad@gmail.com    |
+| sharmin   | bagde    | sharmin.bagde@gmail.com  |
+| vrushali  | bagde    | vrushali.bagde@gmail.com |
+| vasant    | khande   | vasant.khande@gmail.com  |
+| nitish    | patil    | nitish.patil@gmail.com   |
+| nrupali   | save     | nrupali.save@gmail.com   |
+| supriya   | karnik   | supriya.karnik@gmail.com |
+| bandish   | karnik   | bandish.karnik@gmail.com |
+| sangita   | karnik   | sangita.karnik@gmail.com |
+| sangita   | menon    | sangita.menon@gmail.com  |
+| bhavin    | patel    | bhavin.patel@gmail.com   |
+| kaushal   | patil    | kaushal.patil@gmail.com  |
+| pankaj    | gandhi   | pankaj.gandhi@gmail.com  |
+| rajan     | patel    | rajan.patel@gmail.com    |
+| bhavin    | desai    | bhavin.desai@gmail.com   |
+| mukesh    | bhavsar  | mukesh.bhavsar@gmail.com |
+| dilu      | khande   | dilu.khande@gmail.com    |
+| rohit     | patil    | rohit.patil@gmail.com    |
++-----------+----------+--------------------------+
+22 rows in set (0.00 sec)
+
+mysql> select substring(namefirst,3),namelast from student;
++------------------------+----------+
+| substring(namefirst,3) | namelast |
++------------------------+----------+
+| leel                   | bagde    |
+| kar                    | rakde    |
+| ka                     | joshi    |
+| hul                    | patil    |
+| han                    | bagde    |
+| la                     | prasad   |
+| armin                  | bagde    |
+| ushali                 | bagde    |
+| sant                   | khande   |
+| tish                   | patil    |
+| el                     | save     |
+| ep                     | save     |
+| upali                  | save     |
+| priya                  | karnik   |
+| ndish                  | karnik   |
+| ngita                  | karnik   |
+| ngita                  | menon    |
+| hul                    | shah     |
+| avin                   | patel    |
+| ushal                  | patil    |
+| nkaj                   | gandhi   |
+| jan                    | patel    |
+| avin                   | desai    |
+| kesh                   | bhavsar  |
+| lu                     | khande   |
+| nam                    | khan     |
+| hit                    | patil    |
+| j                      | bubber   |
++------------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select substring(namefirst,1,3),namelast from student;
++--------------------------+----------+
+| substring(namefirst,1,3) | namelast |
++--------------------------+----------+
+| sal                      | bagde    |
+| omk                      | rakde    |
+| ulk                      | joshi    |
+| rah                      | patil    |
+| ruh                      | bagde    |
+| lal                      | prasad   |
+| sha                      | bagde    |
+| vru                      | bagde    |
+| vas                      | khande   |
+| nit                      | patil    |
+| nee                      | save     |
+| dee                      | save     |
+| nru                      | save     |
+| sup                      | karnik   |
+| ban                      | karnik   |
+| san                      | karnik   |
+| san                      | menon    |
+| rah                      | shah     |
+| bha                      | patel    |
+| kau                      | patil    |
+| pan                      | gandhi   |
+| raj                      | patel    |
+| bha                      | desai    |
+| muk                      | bhavsar  |
+| dil                      | khande   |
+| son                      | khan     |
+| roh                      | patil    |
+| raj                      | bubber   |
++--------------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select substring(namefirst,3),namelast from student;
++------------------------+----------+
+| substring(namefirst,3) | namelast |
++------------------------+----------+
+| leel                   | bagde    |
+| kar                    | rakde    |
+| ka                     | joshi    |
+| hul                    | patil    |
+| han                    | bagde    |
+| la                     | prasad   |
+| armin                  | bagde    |
+| ushali                 | bagde    |
+| sant                   | khande   |
+| tish                   | patil    |
+| el                     | save     |
+| ep                     | save     |
+| upali                  | save     |
+| priya                  | karnik   |
+| ndish                  | karnik   |
+| ngita                  | karnik   |
+| ngita                  | menon    |
+| hul                    | shah     |
+| avin                   | patel    |
+| ushal                  | patil    |
+| nkaj                   | gandhi   |
+| jan                    | patel    |
+| avin                   | desai    |
+| kesh                   | bhavsar  |
+| lu                     | khande   |
+| nam                    | khan     |
+| hit                    | patil    |
+| j                      | bubber   |
++------------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,substring(namefirst,3),namelast from student;
++-----------+------------------------+----------+
+| namefirst | substring(namefirst,3) | namelast |
++-----------+------------------------+----------+
+| saleel    | leel                   | bagde    |
+| omkar     | kar                    | rakde    |
+| ulka      | ka                     | joshi    |
+| rahul     | hul                    | patil    |
+| ruhan     | han                    | bagde    |
+| lala      | la                     | prasad   |
+| sharmin   | armin                  | bagde    |
+| vrushali  | ushali                 | bagde    |
+| vasant    | sant                   | khande   |
+| nitish    | tish                   | patil    |
+| neel      | el                     | save     |
+| deep      | ep                     | save     |
+| nrupali   | upali                  | save     |
+| supriya   | priya                  | karnik   |
+| bandish   | ndish                  | karnik   |
+| sangita   | ngita                  | karnik   |
+| sangita   | ngita                  | menon    |
+| rahul     | hul                    | shah     |
+| bhavin    | avin                   | patel    |
+| kaushal   | ushal                  | patil    |
+| pankaj    | nkaj                   | gandhi   |
+| rajan     | jan                    | patel    |
+| bhavin    | avin                   | desai    |
+| mukesh    | kesh                   | bhavsar  |
+| dilu      | lu                     | khande   |
+| sonam     | nam                    | khan     |
+| rohit     | hit                    | patil    |
+| raj       | j                      | bubber   |
++-----------+------------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,substring(namefirst,length(namefirst),3),namelast from student;
++-----------+------------------------------------------+----------+
+| namefirst | substring(namefirst,length(namefirst),3) | namelast |
++-----------+------------------------------------------+----------+
+| saleel    | l                                        | bagde    |
+| omkar     | r                                        | rakde    |
+| ulka      | a                                        | joshi    |
+| rahul     | l                                        | patil    |
+| ruhan     | n                                        | bagde    |
+| lala      | a                                        | prasad   |
+| sharmin   | n                                        | bagde    |
+| vrushali  | i                                        | bagde    |
+| vasant    | t                                        | khande   |
+| nitish    | h                                        | patil    |
+| neel      | l                                        | save     |
+| deep      | p                                        | save     |
+| nrupali   | i                                        | save     |
+| supriya   | a                                        | karnik   |
+| bandish   | h                                        | karnik   |
+| sangita   | a                                        | karnik   |
+| sangita   | a                                        | menon    |
+| rahul     | l                                        | shah     |
+| bhavin    | n                                        | patel    |
+| kaushal   | l                                        | patil    |
+| pankaj    | j                                        | gandhi   |
+| rajan     | n                                        | patel    |
+| bhavin    | n                                        | desai    |
+| mukesh    | h                                        | bhavsar  |
+| dilu      | u                                        | khande   |
+| sonam     | m                                        | khan     |
+| rohit     | t                                        | patil    |
+| raj       | j                                        | bubber   |
++-----------+------------------------------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,substring(namefirst,3,1),namelast from student;
++-----------+--------------------------+----------+
+| namefirst | substring(namefirst,3,1) | namelast |
++-----------+--------------------------+----------+
+| saleel    | l                        | bagde    |
+| omkar     | k                        | rakde    |
+| ulka      | k                        | joshi    |
+| rahul     | h                        | patil    |
+| ruhan     | h                        | bagde    |
+| lala      | l                        | prasad   |
+| sharmin   | a                        | bagde    |
+| vrushali  | u                        | bagde    |
+| vasant    | s                        | khande   |
+| nitish    | t                        | patil    |
+| neel      | e                        | save     |
+| deep      | e                        | save     |
+| nrupali   | u                        | save     |
+| supriya   | p                        | karnik   |
+| bandish   | n                        | karnik   |
+| sangita   | n                        | karnik   |
+| sangita   | n                        | menon    |
+| rahul     | h                        | shah     |
+| bhavin    | a                        | patel    |
+| kaushal   | u                        | patil    |
+| pankaj    | n                        | gandhi   |
+| rajan     | j                        | patel    |
+| bhavin    | a                        | desai    |
+| mukesh    | k                        | bhavsar  |
+| dilu      | l                        | khande   |
+| sonam     | n                        | khan     |
+| rohit     | h                        | patil    |
+| raj       | j                        | bubber   |
++-----------+--------------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select namefirst,substring(namefirst,-3,3),namelast from student;
++-----------+---------------------------+----------+
+| namefirst | substring(namefirst,-3,3) | namelast |
++-----------+---------------------------+----------+
+| saleel    | eel                       | bagde    |
+| omkar     | kar                       | rakde    |
+| ulka      | lka                       | joshi    |
+| rahul     | hul                       | patil    |
+| ruhan     | han                       | bagde    |
+| lala      | ala                       | prasad   |
+| sharmin   | min                       | bagde    |
+| vrushali  | ali                       | bagde    |
+| vasant    | ant                       | khande   |
+| nitish    | ish                       | patil    |
+| neel      | eel                       | save     |
+| deep      | eep                       | save     |
+| nrupali   | ali                       | save     |
+| supriya   | iya                       | karnik   |
+| bandish   | ish                       | karnik   |
+| sangita   | ita                       | karnik   |
+| sangita   | ita                       | menon    |
+| rahul     | hul                       | shah     |
+| bhavin    | vin                       | patel    |
+| kaushal   | hal                       | patil    |
+| pankaj    | kaj                       | gandhi   |
+| rajan     | jan                       | patel    |
+| bhavin    | vin                       | desai    |
+| mukesh    | esh                       | bhavsar  |
+| dilu      | ilu                       | khande   |
+| sonam     | nam                       | khan     |
+| rohit     | hit                       | patil    |
+| raj       | raj                       | bubber   |
++-----------+---------------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select * from student_phone;
++----+-----------+------------+----------+
+| ID | studentID | number     | isActive |
++----+-----------+------------+----------+
+|  1 |         1 | 7032300034 |        1 |
+|  2 |         2 | 7032300039 |        1 |
+|  3 |         3 | 7032300050 |        1 |
+|  4 |         4 | 7032300027 |        1 |
+|  5 |         5 | 7032300001 |        1 |
+|  6 |         6 | 7032300079 |        1 |
+|  7 |         7 | 7032300081 |        1 |
+|  8 |         8 | 7032300054 |        1 |
+|  9 |         9 | 7032300059 |        1 |
+| 10 |        10 | 7032300086 |        1 |
+| 11 |        11 | 7032300082 |        1 |
+| 12 |        12 | 7032300042 |        1 |
+| 13 |        13 | 7032300055 |        1 |
+| 14 |        14 | 7032300013 |        1 |
+| 15 |        15 | 7032300099 |        1 |
+| 16 |        16 | 7032300023 |        1 |
+| 17 |        17 | 7032300084 |        1 |
+| 18 |        18 | 7032300011 |        1 |
+| 19 |        19 | 7032300066 |        1 |
+| 20 |        20 | 7032300096 |        1 |
+| 21 |         1 | 7132300034 |        1 |
+| 22 |         2 | 7132300039 |        1 |
+| 23 |         3 | 7132300050 |        1 |
+| 24 |         4 | 7132300027 |        1 |
+| 25 |         5 | 7032300001 |        1 |
+| 26 |         6 | 7132300079 |        1 |
+| 27 |         7 | 7132300081 |        0 |
+| 28 |         8 | 7132300054 |        0 |
+| 29 |         9 | 7132300059 |        0 |
+| 30 |        10 | 7132300086 |        0 |
+| 31 |        11 | 7132300082 |        0 |
+| 32 |        12 | 7132300042 |        0 |
+| 33 |        13 | 7132300055 |        0 |
+| 34 |        13 | 7132300055 |        0 |
+| 35 |        13 | 7132300055 |        1 |
+| 36 |         6 | 7134567123 |        0 |
+| 37 |        21 | 7156567123 |        1 |
+| 38 |        22 | 7156567134 |        1 |
+| 39 |        23 | 7156563423 |        0 |
+| 40 |        24 | 7156567183 |        0 |
+| 41 |        25 | 7146566412 |        1 |
++----+-----------+------------+----------+
+41 rows in set (0.02 sec)
+
+mysql> select number from student where substr(number,1,2)=70;
+ERROR 1054 (42S22): Unknown column 'number' in 'field list'
+mysql> select number from student_phone where substr(number,1,2)=70;
++------------+
+| number     |
++------------+
+| 7032300034 |
+| 7032300039 |
+| 7032300050 |
+| 7032300027 |
+| 7032300001 |
+| 7032300079 |
+| 7032300081 |
+| 7032300054 |
+| 7032300059 |
+| 7032300086 |
+| 7032300082 |
+| 7032300042 |
+| 7032300055 |
+| 7032300013 |
+| 7032300099 |
+| 7032300023 |
+| 7032300084 |
+| 7032300011 |
+| 7032300066 |
+| 7032300096 |
+| 7032300001 |
++------------+
+21 rows in set (0.00 sec)
+
+mysql> select * from student;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com     |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 11 | neel      | save     | 1975-10-30 | neel.save@gmail.com      |
+| 12 | deep      | save     | 1986-11-30 | deep.save@gmail.com      |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+| 18 | rahul     | shah     | 1982-06-12 | rahul.shah@gmail.com     |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
++----+-----------+----------+------------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select * from student limit 5;
++----+-----------+----------+------------+------------------------+
+| id | namefirst | namelast | DOB        | emailID                |
++----+-----------+----------+------------+------------------------+
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com  |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com   |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com  |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com  |
++----+-----------+----------+------------+------------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student limit 5 offset length(id)-5;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(id)-5' at line 1
+mysql> select * from student limit 5 offset 22;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
++----+-----------+----------+------------+--------------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student limit 5 offset 23;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
++----+-----------+----------+------------+--------------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student order by id desc limit 5;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
++----+-----------+----------+------------+--------------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student order by namefirst ;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 12 | deep      | save     | 1986-11-30 | deep.save@gmail.com      |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 11 | neel      | save     | 1975-10-30 | neel.save@gmail.com      |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+| 18 | rahul     | shah     | 1982-06-12 | rahul.shah@gmail.com     |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com     |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
++----+-----------+----------+------------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select * from student order by namelast;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com     |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+| 11 | neel      | save     | 1975-10-30 | neel.save@gmail.com      |
+| 12 | deep      | save     | 1986-11-30 | deep.save@gmail.com      |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+| 18 | rahul     | shah     | 1982-06-12 | rahul.shah@gmail.com     |
++----+-----------+----------+------------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select * from student order by namelast desc;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+| 18 | rahul     | shah     | 1982-06-12 | rahul.shah@gmail.com     |
+| 11 | neel      | save     | 1975-10-30 | neel.save@gmail.com      |
+| 12 | deep      | save     | 1986-11-30 | deep.save@gmail.com      |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com     |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
++----+-----------+----------+------------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select * from student where length(emailid)>20;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
++----+-----------+----------+------------+--------------------------+
+22 rows in set (0.00 sec)
+
+mysql> select concat(namefirst," ",namelast) from student;
++--------------------------------+
+| concat(namefirst," ",namelast) |
++--------------------------------+
+| saleel bagde                   |
+| omkar rakde                    |
+| ulka joshi                     |
+| rahul patil                    |
+| ruhan bagde                    |
+| lala prasad                    |
+| sharmin bagde                  |
+| vrushali bagde                 |
+| vasant khande                  |
+| nitish patil                   |
+| neel save                      |
+| deep save                      |
+| nrupali save                   |
+| supriya karnik                 |
+| bandish karnik                 |
+| sangita karnik                 |
+| sangita menon                  |
+| rahul shah                     |
+| bhavin patel                   |
+| kaushal patil                  |
+| pankaj gandhi                  |
+| rajan patel                    |
+| bhavin desai                   |
+| mukesh bhavsar                 |
+| dilu khande                    |
+| sonam khan                     |
+| rohit patil                    |
+| raj bubber                     |
++--------------------------------+
+28 rows in set (0.00 sec)
+
+mysql> select upper(namefirst),upper(namelast) from student;
++------------------+-----------------+
+| upper(namefirst) | upper(namelast) |
++------------------+-----------------+
+| SALEEL           | BAGDE           |
+| OMKAR            | RAKDE           |
+| ULKA             | JOSHI           |
+| RAHUL            | PATIL           |
+| RUHAN            | BAGDE           |
+| LALA             | PRASAD          |
+| SHARMIN          | BAGDE           |
+| VRUSHALI         | BAGDE           |
+| VASANT           | KHANDE          |
+| NITISH           | PATIL           |
+| NEEL             | SAVE            |
+| DEEP             | SAVE            |
+| NRUPALI          | SAVE            |
+| SUPRIYA          | KARNIK          |
+| BANDISH          | KARNIK          |
+| SANGITA          | KARNIK          |
+| SANGITA          | MENON           |
+| RAHUL            | SHAH            |
+| BHAVIN           | PATEL           |
+| KAUSHAL          | PATIL           |
+| PANKAJ           | GANDHI          |
+| RAJAN            | PATEL           |
+| BHAVIN           | DESAI           |
+| MUKESH           | BHAVSAR         |
+| DILU             | KHANDE          |
+| SONAM            | KHAN            |
+| ROHIT            | PATIL           |
+| RAJ              | BUBBER          |
++------------------+-----------------+
+28 rows in set (0.00 sec)
+
+mysql> select upper(namefirst) as namefirst,upper(namelast) as namelast from student;
++-----------+----------+
+| namefirst | namelast |
++-----------+----------+
+| SALEEL    | BAGDE    |
+| OMKAR     | RAKDE    |
+| ULKA      | JOSHI    |
+| RAHUL     | PATIL    |
+| RUHAN     | BAGDE    |
+| LALA      | PRASAD   |
+| SHARMIN   | BAGDE    |
+| VRUSHALI  | BAGDE    |
+| VASANT    | KHANDE   |
+| NITISH    | PATIL    |
+| NEEL      | SAVE     |
+| DEEP      | SAVE     |
+| NRUPALI   | SAVE     |
+| SUPRIYA   | KARNIK   |
+| BANDISH   | KARNIK   |
+| SANGITA   | KARNIK   |
+| SANGITA   | MENON    |
+| RAHUL     | SHAH     |
+| BHAVIN    | PATEL    |
+| KAUSHAL   | PATIL    |
+| PANKAJ    | GANDHI   |
+| RAJAN     | PATEL    |
+| BHAVIN    | DESAI    |
+| MUKESH    | BHAVSAR  |
+| DILU      | KHANDE   |
+| SONAM     | KHAN     |
+| ROHIT     | PATIL    |
+| RAJ       | BUBBER   |
++-----------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select * from student;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com     |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 11 | neel      | save     | 1975-10-30 | neel.save@gmail.com      |
+| 12 | deep      | save     | 1986-11-30 | deep.save@gmail.com      |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+| 18 | rahul     | shah     | 1982-06-12 | rahul.shah@gmail.com     |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
++----+-----------+----------+------------+--------------------------+
+28 rows in set (0.00 sec)
+
+mysql> desc student;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| id        | int         | NO   | PRI | NULL    |       |
+| namefirst | varchar(20) | YES  |     | NULL    |       |
+| namelast  | varchar(20) | YES  |     | NULL    |       |
+| DOB       | date        | YES  |     | NULL    |       |
+| emailID   | varchar(40) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.01 sec)
+
+mysql> insert into student values(29,NULL,NULL,1970-09-23,NULL);
+ERROR 1292 (22007): Incorrect date value: '1938' for column 'DOB' at row 1
+mysql> insert into student values(29,NULL,NULL,"1970-09-23",NULL);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from student;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com     |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 11 | neel      | save     | 1975-10-30 | neel.save@gmail.com      |
+| 12 | deep      | save     | 1986-11-30 | deep.save@gmail.com      |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+| 18 | rahul     | shah     | 1982-06-12 | rahul.shah@gmail.com     |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
+| 29 | NULL      | NULL     | 1970-09-23 | NULL                     |
++----+-----------+----------+------------+--------------------------+
+29 rows in set (0.00 sec)
+
+mysql> select id,ifnull(namefirst," ") from student;
++----+-----------------------+
+| id | ifnull(namefirst," ") |
++----+-----------------------+
+|  1 | saleel                |
+|  2 | omkar                 |
+|  3 | ulka                  |
+|  4 | rahul                 |
+|  5 | ruhan                 |
+|  6 | lala                  |
+|  7 | sharmin               |
+|  8 | vrushali              |
+|  9 | vasant                |
+| 10 | nitish                |
+| 11 | neel                  |
+| 12 | deep                  |
+| 13 | nrupali               |
+| 14 | supriya               |
+| 15 | bandish               |
+| 16 | sangita               |
+| 17 | sangita               |
+| 18 | rahul                 |
+| 19 | bhavin                |
+| 20 | kaushal               |
+| 21 | pankaj                |
+| 22 | rajan                 |
+| 23 | bhavin                |
+| 24 | mukesh                |
+| 25 | dilu                  |
+| 26 | sonam                 |
+| 27 | rohit                 |
+| 28 | raj                   |
+| 29 |                       |
++----+-----------------------+
+29 rows in set (0.00 sec)
+
+mysql> select id,ifnull(namefirst," ") ,ifnull(namelast," "),ifnull(emailid," ") from student;
++----+-----------------------+----------------------+--------------------------+
+| id | ifnull(namefirst," ") | ifnull(namelast," ") | ifnull(emailid," ")      |
++----+-----------------------+----------------------+--------------------------+
+|  1 | saleel                | bagde                | saleel.bagde@gmail.com   |
+|  2 | omkar                 | rakde                | omkar.rakde@gmail.com    |
+|  3 | ulka                  | joshi                | ulka.joshi@gmail.com     |
+|  4 | rahul                 | patil                | rahul.patil@gmail.com    |
+|  5 | ruhan                 | bagde                | ruhan.bagde@gmail.com    |
+|  6 | lala                  | prasad               | lala.prasad@gmail.com    |
+|  7 | sharmin               | bagde                | sharmin.bagde@gmail.com  |
+|  8 | vrushali              | bagde                | vrushali.bagde@gmail.com |
+|  9 | vasant                | khande               | vasant.khande@gmail.com  |
+| 10 | nitish                | patil                | nitish.patil@gmail.com   |
+| 11 | neel                  | save                 | neel.save@gmail.com      |
+| 12 | deep                  | save                 | deep.save@gmail.com      |
+| 13 | nrupali               | save                 | nrupali.save@gmail.com   |
+| 14 | supriya               | karnik               | supriya.karnik@gmail.com |
+| 15 | bandish               | karnik               | bandish.karnik@gmail.com |
+| 16 | sangita               | karnik               | sangita.karnik@gmail.com |
+| 17 | sangita               | menon                | sangita.menon@gmail.com  |
+| 18 | rahul                 | shah                 | rahul.shah@gmail.com     |
+| 19 | bhavin                | patel                | bhavin.patel@gmail.com   |
+| 20 | kaushal               | patil                | kaushal.patil@gmail.com  |
+| 21 | pankaj                | gandhi               | pankaj.gandhi@gmail.com  |
+| 22 | rajan                 | patel                | rajan.patel@gmail.com    |
+| 23 | bhavin                | desai                | bhavin.desai@gmail.com   |
+| 24 | mukesh                | bhavsar              | mukesh.bhavsar@gmail.com |
+| 25 | dilu                  | khande               | dilu.khande@gmail.com    |
+| 26 | sonam                 | khan                 | sonam.khan@gmail.com     |
+| 27 | rohit                 | patil                | rohit.patil@gmail.com    |
+| 28 | raj                   | bubber               | raj.bubber@gmail.com     |
+| 29 |                       |                      |                          |
++----+-----------------------+----------------------+--------------------------+
+29 rows in set (0.00 sec)
+
+mysql> select id,concat(ifnull(namefirst," ") ,ifnull(namelast," "),ifnull(emailid," ")) from student;
++----+-------------------------------------------------------------------------+
+| id | concat(ifnull(namefirst," ") ,ifnull(namelast," "),ifnull(emailid," ")) |
++----+-------------------------------------------------------------------------+
+|  1 | saleelbagdesaleel.bagde@gmail.com                                       |
+|  2 | omkarrakdeomkar.rakde@gmail.com                                         |
+|  3 | ulkajoshiulka.joshi@gmail.com                                           |
+|  4 | rahulpatilrahul.patil@gmail.com                                         |
+|  5 | ruhanbagderuhan.bagde@gmail.com                                         |
+|  6 | lalaprasadlala.prasad@gmail.com                                         |
+|  7 | sharminbagdesharmin.bagde@gmail.com                                     |
+|  8 | vrushalibagdevrushali.bagde@gmail.com                                   |
+|  9 | vasantkhandevasant.khande@gmail.com                                     |
+| 10 | nitishpatilnitish.patil@gmail.com                                       |
+| 11 | neelsaveneel.save@gmail.com                                             |
+| 12 | deepsavedeep.save@gmail.com                                             |
+| 13 | nrupalisavenrupali.save@gmail.com                                       |
+| 14 | supriyakarniksupriya.karnik@gmail.com                                   |
+| 15 | bandishkarnikbandish.karnik@gmail.com                                   |
+| 16 | sangitakarniksangita.karnik@gmail.com                                   |
+| 17 | sangitamenonsangita.menon@gmail.com                                     |
+| 18 | rahulshahrahul.shah@gmail.com                                           |
+| 19 | bhavinpatelbhavin.patel@gmail.com                                       |
+| 20 | kaushalpatilkaushal.patil@gmail.com                                     |
+| 21 | pankajgandhipankaj.gandhi@gmail.com                                     |
+| 22 | rajanpatelrajan.patel@gmail.com                                         |
+| 23 | bhavindesaibhavin.desai@gmail.com                                       |
+| 24 | mukeshbhavsarmukesh.bhavsar@gmail.com                                   |
+| 25 | dilukhandedilu.khande@gmail.com                                         |
+| 26 | sonamkhansonam.khan@gmail.com                                           |
+| 27 | rohitpatilrohit.patil@gmail.com                                         |
+| 28 | rajbubberraj.bubber@gmail.com                                           |
+| 29 |                                                                         |
++----+-------------------------------------------------------------------------+
+29 rows in set (0.00 sec)
+
+mysql> select id,concat(ifnull(namefirst," ") ," ",ifnull(namelast," "),"and" ,ifnull(emailid," ")) from student;
++----+------------------------------------------------------------------------------------+
+| id | concat(ifnull(namefirst," ") ," ",ifnull(namelast," "),"and" ,ifnull(emailid," ")) |
++----+------------------------------------------------------------------------------------+
+|  1 | saleel bagdeandsaleel.bagde@gmail.com                                              |
+|  2 | omkar rakdeandomkar.rakde@gmail.com                                                |
+|  3 | ulka joshiandulka.joshi@gmail.com                                                  |
+|  4 | rahul patilandrahul.patil@gmail.com                                                |
+|  5 | ruhan bagdeandruhan.bagde@gmail.com                                                |
+|  6 | lala prasadandlala.prasad@gmail.com                                                |
+|  7 | sharmin bagdeandsharmin.bagde@gmail.com                                            |
+|  8 | vrushali bagdeandvrushali.bagde@gmail.com                                          |
+|  9 | vasant khandeandvasant.khande@gmail.com                                            |
+| 10 | nitish patilandnitish.patil@gmail.com                                              |
+| 11 | neel saveandneel.save@gmail.com                                                    |
+| 12 | deep saveanddeep.save@gmail.com                                                    |
+| 13 | nrupali saveandnrupali.save@gmail.com                                              |
+| 14 | supriya karnikandsupriya.karnik@gmail.com                                          |
+| 15 | bandish karnikandbandish.karnik@gmail.com                                          |
+| 16 | sangita karnikandsangita.karnik@gmail.com                                          |
+| 17 | sangita menonandsangita.menon@gmail.com                                            |
+| 18 | rahul shahandrahul.shah@gmail.com                                                  |
+| 19 | bhavin patelandbhavin.patel@gmail.com                                              |
+| 20 | kaushal patilandkaushal.patil@gmail.com                                            |
+| 21 | pankaj gandhiandpankaj.gandhi@gmail.com                                            |
+| 22 | rajan patelandrajan.patel@gmail.com                                                |
+| 23 | bhavin desaiandbhavin.desai@gmail.com                                              |
+| 24 | mukesh bhavsarandmukesh.bhavsar@gmail.com                                          |
+| 25 | dilu khandeanddilu.khande@gmail.com                                                |
+| 26 | sonam khanandsonam.khan@gmail.com                                                  |
+| 27 | rohit patilandrohit.patil@gmail.com                                                |
+| 28 | raj bubberandraj.bubber@gmail.com                                                  |
+| 29 |    and                                                                             |
++----+------------------------------------------------------------------------------------+
+29 rows in set (0.00 sec)
+
+mysql> select id,concat(ifnull(namefirst," ") ," ",ifnull(namelast," ")," and " ,ifnull(emailid," ")) from student;
++----+--------------------------------------------------------------------------------------+
+| id | concat(ifnull(namefirst," ") ," ",ifnull(namelast," ")," and " ,ifnull(emailid," ")) |
++----+--------------------------------------------------------------------------------------+
+|  1 | saleel bagde and saleel.bagde@gmail.com                                              |
+|  2 | omkar rakde and omkar.rakde@gmail.com                                                |
+|  3 | ulka joshi and ulka.joshi@gmail.com                                                  |
+|  4 | rahul patil and rahul.patil@gmail.com                                                |
+|  5 | ruhan bagde and ruhan.bagde@gmail.com                                                |
+|  6 | lala prasad and lala.prasad@gmail.com                                                |
+|  7 | sharmin bagde and sharmin.bagde@gmail.com                                            |
+|  8 | vrushali bagde and vrushali.bagde@gmail.com                                          |
+|  9 | vasant khande and vasant.khande@gmail.com                                            |
+| 10 | nitish patil and nitish.patil@gmail.com                                              |
+| 11 | neel save and neel.save@gmail.com                                                    |
+| 12 | deep save and deep.save@gmail.com                                                    |
+| 13 | nrupali save and nrupali.save@gmail.com                                              |
+| 14 | supriya karnik and supriya.karnik@gmail.com                                          |
+| 15 | bandish karnik and bandish.karnik@gmail.com                                          |
+| 16 | sangita karnik and sangita.karnik@gmail.com                                          |
+| 17 | sangita menon and sangita.menon@gmail.com                                            |
+| 18 | rahul shah and rahul.shah@gmail.com                                                  |
+| 19 | bhavin patel and bhavin.patel@gmail.com                                              |
+| 20 | kaushal patil and kaushal.patil@gmail.com                                            |
+| 21 | pankaj gandhi and pankaj.gandhi@gmail.com                                            |
+| 22 | rajan patel and rajan.patel@gmail.com                                                |
+| 23 | bhavin desai and bhavin.desai@gmail.com                                              |
+| 24 | mukesh bhavsar and mukesh.bhavsar@gmail.com                                          |
+| 25 | dilu khande and dilu.khande@gmail.com                                                |
+| 26 | sonam khan and sonam.khan@gmail.com                                                  |
+| 27 | rohit patil and rohit.patil@gmail.com                                                |
+| 28 | raj bubber and raj.bubber@gmail.com                                                  |
+| 29 |     and                                                                              |
++----+--------------------------------------------------------------------------------------+
+29 rows in set (0.00 sec)
+
+mysql> select id,concat(ifnull(namefirst," ") ," ",ifnull(namelast," ")," and emailid is " ,ifnull(emailid," ")) from student;
++----+-------------------------------------------------------------------------------------------------+
+| id | concat(ifnull(namefirst," ") ," ",ifnull(namelast," ")," and emailid is " ,ifnull(emailid," ")) |
++----+-------------------------------------------------------------------------------------------------+
+|  1 | saleel bagde and emailid is saleel.bagde@gmail.com                                              |
+|  2 | omkar rakde and emailid is omkar.rakde@gmail.com                                                |
+|  3 | ulka joshi and emailid is ulka.joshi@gmail.com                                                  |
+|  4 | rahul patil and emailid is rahul.patil@gmail.com                                                |
+|  5 | ruhan bagde and emailid is ruhan.bagde@gmail.com                                                |
+|  6 | lala prasad and emailid is lala.prasad@gmail.com                                                |
+|  7 | sharmin bagde and emailid is sharmin.bagde@gmail.com                                            |
+|  8 | vrushali bagde and emailid is vrushali.bagde@gmail.com                                          |
+|  9 | vasant khande and emailid is vasant.khande@gmail.com                                            |
+| 10 | nitish patil and emailid is nitish.patil@gmail.com                                              |
+| 11 | neel save and emailid is neel.save@gmail.com                                                    |
+| 12 | deep save and emailid is deep.save@gmail.com                                                    |
+| 13 | nrupali save and emailid is nrupali.save@gmail.com                                              |
+| 14 | supriya karnik and emailid is supriya.karnik@gmail.com                                          |
+| 15 | bandish karnik and emailid is bandish.karnik@gmail.com                                          |
+| 16 | sangita karnik and emailid is sangita.karnik@gmail.com                                          |
+| 17 | sangita menon and emailid is sangita.menon@gmail.com                                            |
+| 18 | rahul shah and emailid is rahul.shah@gmail.com                                                  |
+| 19 | bhavin patel and emailid is bhavin.patel@gmail.com                                              |
+| 20 | kaushal patil and emailid is kaushal.patil@gmail.com                                            |
+| 21 | pankaj gandhi and emailid is pankaj.gandhi@gmail.com                                            |
+| 22 | rajan patel and emailid is rajan.patel@gmail.com                                                |
+| 23 | bhavin desai and emailid is bhavin.desai@gmail.com                                              |
+| 24 | mukesh bhavsar and emailid is mukesh.bhavsar@gmail.com                                          |
+| 25 | dilu khande and emailid is dilu.khande@gmail.com                                                |
+| 26 | sonam khan and emailid is sonam.khan@gmail.com                                                  |
+| 27 | rohit patil and emailid is rohit.patil@gmail.com                                                |
+| 28 | raj bubber and emailid is raj.bubber@gmail.com                                                  |
+| 29 |     and emailid is                                                                              |
++----+-------------------------------------------------------------------------------------------------+
+29 rows in set (0.00 sec)
+
+mysql> select reverse(namefirst) as rev_name ,reverse(namelast) as rev_last from student;
++----------+----------+
+| rev_name | rev_last |
++----------+----------+
+| leelas   | edgab    |
+| rakmo    | edkar    |
+| aklu     | ihsoj    |
+| luhar    | litap    |
+| nahur    | edgab    |
+| alal     | dasarp   |
+| nimrahs  | edgab    |
+| ilahsurv | edgab    |
+| tnasav   | ednahk   |
+| hsitin   | litap    |
+| leen     | evas     |
+| peed     | evas     |
+| ilapurn  | evas     |
+| ayirpus  | kinrak   |
+| hsidnab  | kinrak   |
+| atignas  | kinrak   |
+| atignas  | nonem    |
+| luhar    | hahs     |
+| nivahb   | letap    |
+| lahsuak  | litap    |
+| jaknap   | ihdnag   |
+| najar    | letap    |
+| nivahb   | iased    |
+| hsekum   | rasvahb  |
+| ulid     | ednahk   |
+| manos    | nahk     |
+| tihor    | litap    |
+| jar      | rebbub   |
+| NULL     | NULL     |
++----------+----------+
+29 rows in set (0.00 sec)
+
+mysql> select substr(namefirst,1,4) from student;
++-----------------------+
+| substr(namefirst,1,4) |
++-----------------------+
+| sale                  |
+| omka                  |
+| ulka                  |
+| rahu                  |
+| ruha                  |
+| lala                  |
+| shar                  |
+| vrus                  |
+| vasa                  |
+| niti                  |
+| neel                  |
+| deep                  |
+| nrup                  |
+| supr                  |
+| band                  |
+| sang                  |
+| sang                  |
+| rahu                  |
+| bhav                  |
+| kaus                  |
+| pank                  |
+| raja                  |
+| bhav                  |
+| muke                  |
+| dilu                  |
+| sona                  |
+| rohi                  |
+| raj                   |
+| NULL                  |
++-----------------------+
+29 rows in set (0.00 sec)
+
+mysql> select substr(namefirst,2,1) from student;
++-----------------------+
+| substr(namefirst,2,1) |
++-----------------------+
+| a                     |
+| m                     |
+| l                     |
+| a                     |
+| u                     |
+| a                     |
+| h                     |
+| r                     |
+| a                     |
+| i                     |
+| e                     |
+| e                     |
+| r                     |
+| u                     |
+| a                     |
+| a                     |
+| a                     |
+| a                     |
+| h                     |
+| a                     |
+| a                     |
+| a                     |
+| h                     |
+| u                     |
+| i                     |
+| o                     |
+| o                     |
+| a                     |
+| NULL                  |
++-----------------------+
+29 rows in set (0.00 sec)
+
+mysql> select concat(substr(namefirst,2,1),substr(namefirst,length(namefirst)-1,1)) from student;
++-----------------------------------------------------------------------+
+| concat(substr(namefirst,2,1),substr(namefirst,length(namefirst)-1,1)) |
++-----------------------------------------------------------------------+
+| ae                                                                    |
+| ma                                                                    |
+| lk                                                                    |
+| au                                                                    |
+| ua                                                                    |
+| al                                                                    |
+| hi                                                                    |
+| rl                                                                    |
+| an                                                                    |
+| is                                                                    |
+| ee                                                                    |
+| ee                                                                    |
+| rl                                                                    |
+| uy                                                                    |
+| as                                                                    |
+| at                                                                    |
+| at                                                                    |
+| au                                                                    |
+| hi                                                                    |
+| aa                                                                    |
+| aa                                                                    |
+| aa                                                                    |
+| hi                                                                    |
+| us                                                                    |
+| il                                                                    |
+| oa                                                                    |
+| oi                                                                    |
+| aa                                                                    |
+| NULL                                                                  |
++-----------------------------------------------------------------------+
+29 rows in set (0.00 sec)
+
+mysql> select namefirst ,concat(substr(namefirst,2,1),substr(namefirst,length(namefirst)-1,1)) as name from student;
++-----------+------+
+| namefirst | name |
++-----------+------+
+| saleel    | ae   |
+| omkar     | ma   |
+| ulka      | lk   |
+| rahul     | au   |
+| ruhan     | ua   |
+| lala      | al   |
+| sharmin   | hi   |
+| vrushali  | rl   |
+| vasant    | an   |
+| nitish    | is   |
+| neel      | ee   |
+| deep      | ee   |
+| nrupali   | rl   |
+| supriya   | uy   |
+| bandish   | as   |
+| sangita   | at   |
+| sangita   | at   |
+| rahul     | au   |
+| bhavin    | hi   |
+| kaushal   | aa   |
+| pankaj    | aa   |
+| rajan     | aa   |
+| bhavin    | hi   |
+| mukesh    | us   |
+| dilu      | il   |
+| sonam     | oa   |
+| rohit     | oi   |
+| raj       | aa   |
+| NULL      | NULL |
++-----------+------+
+29 rows in set (0.00 sec)
+
+mysql> select ascii(namefirst) as ascii_name from student;
++------------+
+| ascii_name |
++------------+
+|        115 |
+|        111 |
+|        117 |
+|        114 |
+|        114 |
+|        108 |
+|        115 |
+|        118 |
+|        118 |
+|        110 |
+|        110 |
+|        100 |
+|        110 |
+|        115 |
+|         98 |
+|        115 |
+|        115 |
+|        114 |
+|         98 |
+|        107 |
+|        112 |
+|        114 |
+|         98 |
+|        109 |
+|        100 |
+|        115 |
+|        114 |
+|        114 |
+|       NULL |
++------------+
+29 rows in set (0.00 sec)
+
+mysql> select number from student_phone;
++------------+
+| number     |
++------------+
+| 7032300034 |
+| 7032300039 |
+| 7032300050 |
+| 7032300027 |
+| 7032300001 |
+| 7032300079 |
+| 7032300081 |
+| 7032300054 |
+| 7032300059 |
+| 7032300086 |
+| 7032300082 |
+| 7032300042 |
+| 7032300055 |
+| 7032300013 |
+| 7032300099 |
+| 7032300023 |
+| 7032300084 |
+| 7032300011 |
+| 7032300066 |
+| 7032300096 |
+| 7132300034 |
+| 7132300039 |
+| 7132300050 |
+| 7132300027 |
+| 7032300001 |
+| 7132300079 |
+| 7132300081 |
+| 7132300054 |
+| 7132300059 |
+| 7132300086 |
+| 7132300082 |
+| 7132300042 |
+| 7132300055 |
+| 7132300055 |
+| 7132300055 |
+| 7134567123 |
+| 7156567123 |
+| 7156567134 |
+| 7156563423 |
+| 7156567183 |
+| 7146566412 |
++------------+
+41 rows in set (0.00 sec)
+
+mysql> select concat(number,"*****");
+ERROR 1054 (42S22): Unknown column 'number' in 'field list'
+mysql> select concat(number,"*****") from student_phone;
++------------------------+
+| concat(number,"*****") |
++------------------------+
+| 7032300034*****        |
+| 7032300039*****        |
+| 7032300050*****        |
+| 7032300027*****        |
+| 7032300001*****        |
+| 7032300079*****        |
+| 7032300081*****        |
+| 7032300054*****        |
+| 7032300059*****        |
+| 7032300086*****        |
+| 7032300082*****        |
+| 7032300042*****        |
+| 7032300055*****        |
+| 7032300013*****        |
+| 7032300099*****        |
+| 7032300023*****        |
+| 7032300084*****        |
+| 7032300011*****        |
+| 7032300066*****        |
+| 7032300096*****        |
+| 7132300034*****        |
+| 7132300039*****        |
+| 7132300050*****        |
+| 7132300027*****        |
+| 7032300001*****        |
+| 7132300079*****        |
+| 7132300081*****        |
+| 7132300054*****        |
+| 7132300059*****        |
+| 7132300086*****        |
+| 7132300082*****        |
+| 7132300042*****        |
+| 7132300055*****        |
+| 7132300055*****        |
+| 7132300055*****        |
+| 7134567123*****        |
+| 7156567123*****        |
+| 7156567134*****        |
+| 7156563423*****        |
+| 7156567183*****        |
+| 7146566412*****        |
++------------------------+
+41 rows in set (0.00 sec)
+
+mysql> select * from student;
++----+-----------+----------+------------+--------------------------+
+| id | namefirst | namelast | DOB        | emailID                  |
++----+-----------+----------+------------+--------------------------+
+|  1 | saleel    | bagde    | 1984-06-12 | saleel.bagde@gmail.com   |
+|  2 | omkar     | rakde    | 1969-10-25 | omkar.rakde@gmail.com    |
+|  3 | ulka      | joshi    | 1970-10-25 | ulka.joshi@gmail.com     |
+|  4 | rahul     | patil    | 1982-10-31 | rahul.patil@gmail.com    |
+|  5 | ruhan     | bagde    | 1984-01-12 | ruhan.bagde@gmail.com    |
+|  6 | lala      | prasad   | 1980-12-01 | lala.prasad@gmail.com    |
+|  7 | sharmin   | bagde    | 1986-12-14 | sharmin.bagde@gmail.com  |
+|  8 | vrushali  | bagde    | 1984-12-29 | vrushali.bagde@gmail.com |
+|  9 | vasant    | khande   | 1992-10-26 | vasant.khande@gmail.com  |
+| 10 | nitish    | patil    | 1990-10-26 | nitish.patil@gmail.com   |
+| 11 | neel      | save     | 1975-10-30 | neel.save@gmail.com      |
+| 12 | deep      | save     | 1986-11-30 | deep.save@gmail.com      |
+| 13 | nrupali   | save     | 1981-12-01 | nrupali.save@gmail.com   |
+| 14 | supriya   | karnik   | 1983-12-15 | supriya.karnik@gmail.com |
+| 15 | bandish   | karnik   | 1987-12-30 | bandish.karnik@gmail.com |
+| 16 | sangita   | karnik   | 1990-12-01 | sangita.karnik@gmail.com |
+| 17 | sangita   | menon    | 1989-10-26 | sangita.menon@gmail.com  |
+| 18 | rahul     | shah     | 1982-06-12 | rahul.shah@gmail.com     |
+| 19 | bhavin    | patel    | 1983-11-13 | bhavin.patel@gmail.com   |
+| 20 | kaushal   | patil    | 1982-07-30 | kaushal.patil@gmail.com  |
+| 21 | pankaj    | gandhi   | 1982-07-30 | pankaj.gandhi@gmail.com  |
+| 22 | rajan     | patel    | 1982-07-30 | rajan.patel@gmail.com    |
+| 23 | bhavin    | desai    | 1982-07-30 | bhavin.desai@gmail.com   |
+| 24 | mukesh    | bhavsar  | 1982-07-30 | mukesh.bhavsar@gmail.com |
+| 25 | dilu      | khande   | 1982-07-30 | dilu.khande@gmail.com    |
+| 26 | sonam     | khan     | 1972-05-13 | sonam.khan@gmail.com     |
+| 27 | rohit     | patil    | 1976-12-31 | rohit.patil@gmail.com    |
+| 28 | raj       | bubber   | 1982-02-28 | raj.bubber@gmail.com     |
+| 29 | NULL      | NULL     | 1970-09-23 | NULL                     |
++----+-----------+----------+------------+--------------------------+
+29 rows in set (0.00 sec)
+
+mysql> select Month(DOB) from student;
++------------+
+| Month(DOB) |
++------------+
+|          6 |
+|         10 |
+|         10 |
+|         10 |
+|          1 |
+|         12 |
+|         12 |
+|         12 |
+|         10 |
+|         10 |
+|         10 |
+|         11 |
+|         12 |
+|         12 |
+|         12 |
+|         12 |
+|         10 |
+|          6 |
+|         11 |
+|          7 |
+|          7 |
+|          7 |
+|          7 |
+|          7 |
+|          7 |
+|          5 |
+|         12 |
+|          2 |
+|          9 |
++------------+
+29 rows in set (0.00 sec)
+
+mysql> select DOB from student where Month(DOB)=10;
++------------+
+| DOB        |
++------------+
+| 1969-10-25 |
+| 1970-10-25 |
+| 1982-10-31 |
+| 1992-10-26 |
+| 1990-10-26 |
+| 1975-10-30 |
+| 1989-10-26 |
++------------+
+7 rows in set (0.00 sec)
+
+mysql>
